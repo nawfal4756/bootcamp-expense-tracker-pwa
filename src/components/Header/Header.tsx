@@ -6,9 +6,13 @@ const Header = () => {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.container}>
+		<div>
 			<Grid container spacing={2}>
-				<Typography>Header</Typography>
+				<Grid item xs={12} sm={12} md={12}>
+					<Typography variant="h1" className={classes.heading}>
+						Expense Tracker
+					</Typography>
+				</Grid>
 			</Grid>
 		</div>
 	);

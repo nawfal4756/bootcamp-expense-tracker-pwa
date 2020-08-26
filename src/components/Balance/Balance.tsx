@@ -1,14 +1,22 @@
-import React from 'react'
-import { Grid, Typography } from '@material-ui/core'
+import React from 'react';
+import { Grid, Typography } from '@material-ui/core';
+import { useStyles } from './Balance.styles';
 
 const Balance = () => {
-    return (
-        <div>
-            <Grid>
-                <Typography>Balance</Typography>
-            </Grid>
-        </div>
-    )
-}
+	const classes = useStyles();
+
+	return (
+		<div>
+			<Grid container spacing={2} justify="center">
+				<Grid item xs={10} sm={10} md={10}>
+					<Typography variant="h3" className={classes.text}>
+						Balance
+					</Typography>
+					<Typography className={classes.balance}>$BALANCE</Typography>
+				</Grid>
+			</Grid>
+		</div>
+	);
+};
 
 export default Balance;

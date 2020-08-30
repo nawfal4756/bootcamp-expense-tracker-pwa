@@ -7,6 +7,9 @@ const AddTransaction = () => {
 	const [ description, setDescription ] = useState('');
 	const [ amount, setAmount ] = useState(0);
 
+	console.log(description);
+	console.log(amount);
+
 	const classes = useStyles();
 	return (
 		<div className={classes.root}>

@@ -7,8 +7,10 @@ export const useStyles = makeStyles({
 	},
 	list: {
 		boxShadow: '10px 10px 10px grey',
+		background: 'linear-gradient(135deg, #98eeff, #ffcf98, #edaea8)',
 		'&:hover': {
-			boxShadow: '20px 20px 20px grey'
+			boxShadow: '20px 20px 20px grey',
+			background: 'white'
 		}
 	},
 	text: {

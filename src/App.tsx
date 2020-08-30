@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { useStyles } from './App.styles';
+import { GlobalProvider } from './context/GlobalState';
 
 // Import Components
 const Header = lazy(() => import('./components/Header/Header'));
@@ -13,19 +14,21 @@ function App() {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.root}>
-			<Grid container spacing={2}>
-				<Grid item xs={12} sm={12} md={12} className={classes.container}>
-					<Suspense fallback={<Typography>Loading the data... Please Wait!</Typography>}>
-						<Header />
-						<Balance />
-						<AccountSummary />
-						<TransactionHistory />
-						<AddTransaction />
-					</Suspense>
+		<GlobalProvider>
+			<div className={classes.root}>
+				<Grid container spacing={2}>
+					<Grid item xs={12} sm={12} md={12} className={classes.container}>
+						<Suspense fallback={<Typography>Loading the data... Please Wait!</Typography>}>
+							<Header />
+							<Balance />
+							<AccountSummary />
+							<TransactionHistory />
+							<AddTransaction />
+						</Suspense>
+					</Grid>
 				</Grid>
-			</Grid>
-		</div>
+			</div>
+		</GlobalProvider>
 	);
 }
 

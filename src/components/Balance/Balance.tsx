@@ -6,7 +6,7 @@ const Balance = () => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<div className={classes.root}>
 			<Grid container spacing={2} justify="center">
 				<Grid item xs={10} sm={10} md={10}>
 					<Typography variant="h3" className={classes.text}>

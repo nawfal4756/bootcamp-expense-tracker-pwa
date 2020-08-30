@@ -6,14 +6,14 @@ const AccountSummary = () => {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<div className={classes.root}>
 			<Grid container spacing={2} justify="center" alignItems="center">
 				<Grid item xs={12} sm={12} md={12}>
 					<Typography variant="h3" className={classes.text} gutterBottom>
 						Account Summary
 					</Typography>
 				</Grid>
-				<Grid item xs={4}>
+				<Grid item xs={12} sm={9} md={4}>
 					<Card raised className={classes.card}>
 						<CardContent>
 							<Grid container spacing={2} justify="center" alignItems="center">

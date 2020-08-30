@@ -1,9 +1,12 @@
 import { makeStyles } from '@material-ui/core';
 
 export const useStyles = makeStyles({
+	root: {
+		overflow: 'none'
+	},
 	balance: {
 		fontWeight: 'bold',
-		marginTop: '4%',
+		marginTop: '1%',
 		fontSize: '50px',
 		textAlign: 'center'
 	},

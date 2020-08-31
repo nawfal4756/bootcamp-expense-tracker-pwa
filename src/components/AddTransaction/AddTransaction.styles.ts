@@ -11,7 +11,7 @@ export const useStyles = makeStyles({
 		margin: '2% 0'
 	},
 	btn: {
-		background: 'linear-gradient(135deg, #98eeff, #ffcf98, #edaea8)',
+		background: 'linear-gradient(225deg, #98eeff, #ffcf98, #edaea8)',
 		'&:hover': {
 			background: 'white',
 			boxShadow: '20px 20px 20px grey',

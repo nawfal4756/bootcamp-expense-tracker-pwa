@@ -37,7 +37,7 @@ export const GlobalProvider = (children: Props) => {
 				addTransaction
 			}}
 		>
-			{children}
+			{children.children}
 		</GlobalContext.Provider>
 	);
 };

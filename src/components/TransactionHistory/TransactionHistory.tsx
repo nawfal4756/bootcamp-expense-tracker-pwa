@@ -1,9 +1,20 @@
-import React from 'react';
-import { Grid, Typography, Card, CardContent, Button } from '@material-ui/core';
+import React, { useContext } from 'react';
+import { Grid, Typography } from '@material-ui/core';
 import { useStyles } from './TransactionHistory.styles';
+import { GlobalContext } from '../../context/GlobalState';
+import TransactionList from './TransactionList';
 
 const TransactionHistory = () => {
+	const { transactions } = useContext(GlobalContext);
+
 	const classes = useStyles();
+
+	type transactionType = {
+		id: number;
+		description: string;
+		amount: number;
+		type: string;
+	};
 
 	return (
 		<div className={classes.root}>
@@ -14,21 +25,11 @@ const TransactionHistory = () => {
 					</Typography>
 				</Grid>
 				<Grid item xs={12} sm={12} md={6}>
-					<Card className={classes.list}>
-						<CardContent>
-							<Grid container spacing={2} alignItems="center" justify="center">
-								<Grid item xs={5} sm={5} md={5}>
-									<Typography>DESCRIPTION</Typography>
-								</Grid>
-								<Grid item xs={3} sm={3} md={3}>
-									<Typography>$1234</Typography>
-								</Grid>
-								<Grid item xs={1} sm={1} md={1}>
-									<Button className={classes.btn}>x</Button>
-								</Grid>
-							</Grid>
-						</CardContent>
-					</Card>
+					{transactions.map(({ id, description, amount, type }: transactionType) => {
+						return (
+							<TransactionList key={id} description={description} amount={amount} id={id} type={type} />
+						);
+					})}
 				</Grid>
 			</Grid>
 		</div>

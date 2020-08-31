@@ -12,5 +12,11 @@ export const useStyles = makeStyles({
 	},
 	text: {
 		textAlign: 'center'
+	},
+	positive: {
+		color: 'green'
+	},
+	negative: {
+		color: 'red'
 	}
 });

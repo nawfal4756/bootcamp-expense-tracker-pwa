@@ -2,7 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { useStyles } from './App.styles';
 import { GlobalProvider } from './context/GlobalState';
-import firebase from 'firebase';
+import firebase from './firebase';
 
 // Import Components
 const Header = lazy(() => import('./components/Header/Header'));

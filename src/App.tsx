@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { useStyles } from './App.styles';
 import { GlobalProvider } from './context/GlobalState';
+import firebase from 'firebase';
 
 // Import Components
 const Header = lazy(() => import('./components/Header/Header'));
@@ -12,6 +13,16 @@ const AddTransaction = lazy(() => import('./components/AddTransaction/AddTransac
 
 function App() {
 	const classes = useStyles();
+
+	const messaging = firebase.messaging();
+	messaging
+		.requestPermission()
+		.then(() => {
+			return messaging.getToken();
+		})
+		.then((token: string | undefined) => {
+			console.log('token', token);			
+		});
 
 	return (
 		<GlobalProvider>

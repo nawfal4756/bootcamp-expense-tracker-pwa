@@ -11,7 +11,7 @@ var urlsToCache = [
 	'./manifest.json',
 	'./favicon2.ico',
 	'./',
-	'index.html'
+	'/index.html'
 ];
 
 self.addEventListener('install', function(event) {

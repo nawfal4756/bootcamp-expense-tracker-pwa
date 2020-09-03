@@ -40,12 +40,12 @@ self.addEventListener('activate', function(event) {
 // Fetch
 self.addEventListener('fetch', (event) => {
 	event.respondWith(
-		caches.match(event.request).then(function(resposne) {
+		caches.match(event.request).then(function(response) {
 			if (response) {
 				console.log('Found In Cache');
 				console.log(event.request);
 				console.log(response);
-				return resposne;
+				return response;
 			}
 			console.log('Not found in cache');
 			console.log(event.request);
